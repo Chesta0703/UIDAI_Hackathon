@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'assets/css/login.css' %}" rel="stylesheet">
+</head>
+<body>
+    <form action="{% url 'app:otp' %}" method="POST" id="login-form" class="login-form" autocomplete="off" role="main">
+        {% csrf_token %}
+        <h1 class="a11y-hidden">Login Form</h1>
+        <div>
+            <label class="label-email">
+            <input type="number" class="text" name="aadharNum" placeholder="Enter your Aadhar number" tabindex="1" required />
+            <span class="required">Aadhar number</span>
+            </label>
+        </div>
+        <input id="submitBtn" type="submit" value="Log In"/>
+        <figure aria-hidden="true">
+            <div class="person-body"></div>
+            <div class="neck skin"></div>
+            <div class="head skin">
+            <div class="eyes"></div>
+            <div class="mouth"></div>
+            </div>
+            <div class="hair"></div>
+            <div class="ears"></div>
+            <div class="shirt-1"></div>
+            <div class="shirt-2"></div>
+        </figure>
+        </form>
+</body>
+
+<script>
+    // const submitBtn = document.querySelector("#submitBtn");
+
+    // const setAadharInput = e => {
+    //     const aadharInput = e.target.value;
+    //     if(aadharInput === 12){
+    //         submitBtn.disabled = true
+    //         submitBtn.style.backgroundcolor = "grey";
+    //     }
+    //     else{
+    //         submitBtn.disabled = false
+    //         submitBtn.style.backgroundcolor = "#2F5E8D"
+    //     }
+    // };
+
+</script>
+</html>
